@@ -47,7 +47,7 @@ class Evaluation:
         )
 
         # Initialize MLflow tracking
-        self._init_mlflow()
+        self.init_mlflow()
 
     def init_mlflow(self):
         """
@@ -56,15 +56,15 @@ class Evaluation:
         try:
             dagshub.init(
                 repo_owner="aakash-dec7",
-                repo_name="Self-Improving-Code",
+                repo_name="Model-Evolution-Engine",
                 mlflow=True,
             )
 
             mlflow.set_tracking_uri(
-                "https://dagshub.com/aakash-dec7/Self-Improving-Code.mlflow"
+                "https://dagshub.com/aakash-dec7/Model-Evolution-Engine.mlflow"
             )
 
-            mlflow.set_experiment("Self-Improving-Code")
+            mlflow.set_experiment("Model-Evolution-Engine")
 
             # Generate a unique run name with a timestamp
             self.run_name = f"test--{datetime.now().strftime('%Y/%m/%d-%H:%M:%S')}"
@@ -156,7 +156,7 @@ class Evaluation:
 
                 # Compute BLEU scores for each sample
                 batch_bleu_score = sum(
-                    self._compute_bleu(ref, pred)
+                    self.compute_bleu(ref, pred)
                     for ref, pred in zip(
                         target_batch.cpu().tolist(), output_batch.cpu().tolist()
                     )
@@ -173,7 +173,7 @@ class Evaluation:
         """
         Logs model evaluation results to MLflow and saves metrics locally.
         """
-        commit_hash = self._get_git_commit_hash()
+        commit_hash = self.get_git_commit_hash()
 
         logger.info("Commit Hash: %s", commit_hash)
 
@@ -205,8 +205,8 @@ class Evaluation:
         Executes the training pipeline.
         """
         try:
-            avg_bleu_score = self._evaluate_model()
-            self._log_results(avg_bleu_score)
+            avg_bleu_score = self.evaluate_model()
+            self.log_results(avg_bleu_score)
 
             logger.info("Evaluation pipeline completed successfully")
 

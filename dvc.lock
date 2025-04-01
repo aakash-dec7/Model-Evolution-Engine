@@ -1,0 +1,20 @@
+schema: '2.0'
+stages:
+  preprocessing:
+    cmd: python src/NMT/s1_preprocessing.py
+  model:
+    cmd: python src/NMT/model.py
+  training:
+    cmd: python src/NMT/s2_training.py
+    deps:
+    - path: src/NMT/s1_preprocessing.py
+      hash: md5
+      md5: 85d790295b8880d75d7e8b95996944f3
+      size: 5187
+  evaluation:
+    cmd: python src/NMT/s3_evaluation.py
+    deps:
+    - path: src/NMT/s2_training.py
+      hash: md5
+      md5: 0cf5284902bcbd03ecbc43c16477ae01
+      size: 3710

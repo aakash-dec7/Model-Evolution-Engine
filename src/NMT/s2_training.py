@@ -52,7 +52,7 @@ class Training:
         for epoch in range(num_epochs):
             epoch_loss = 0
 
-            progress_bar = tqdm(self.dataloader, desc=f"Epoch {epoch}/{num_epochs}")
+            progress_bar = tqdm(self.dataloader, desc=f"Epoch {epoch + 1}/{num_epochs}")
 
             for input_batch, target_batch in progress_bar:
 
@@ -99,8 +99,8 @@ class Training:
         Executes the training pipeline.
         """
         try:
-            self._train()
-            self._save_model()
+            self.train()
+            self.save_model()
 
             logger.info("Training pipeline completed successfully")
 
