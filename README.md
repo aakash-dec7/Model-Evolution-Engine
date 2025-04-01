@@ -88,13 +88,13 @@ The NMT model functions as a sequence-to-sequence translation system, leveraging
 
 ### 5. FAISS Vector Database
 
-The engine incorporates **FAISS (Facebook AI Similarity Search)** to store high-quality suggestions and generated code that meet a predefined quality threshold (>=25/30). This database facilitates:
+The engine incorporates **FAISS (Facebook AI Similarity Search)** to store high-quality suggestions and generated code that meet a predefined quality threshold (≥25/30). This database facilitates:
 
-- Efficient retrieval of past successful modifications.
+- Efficient retrieval of past successful modifications to guide future improvements.
 
-- Reinforcement learning for iterative performance improvements.
+- Retrieval-Augmented Generation (RAG) by providing high-quality examples as context for subsequent AI-generated refinements.
 
-- Continuous enhancement of the NMT pipeline based on past refinements.
+- Continuous enhancement of the NMT pipeline through iterative retrieval and refinement based on past successful outputs.
 
 ### 6. Metadata and Abstract Syntax Tree (AST) Analysis
 
@@ -118,7 +118,7 @@ The engine maintains a metadata file (metadata.json) to store structural informa
 
 **5. Iterative Enhancement**: The system continuously references stored improvements for future refinements.
 
-This architecture ensures an adaptive, self-improving translation engine that integrates feedback-driven optimization and reinforcement learning principles.
+This architecture ensures an **adaptive, self-improving translation engine** that integrates **feedback-driven optimization** through **Retrieval-Augmented Generation (RAG)** while leveraging **iterative refinement based on past successful modifications** to enhance performance over time.
 
 ## Experimental Results
 
