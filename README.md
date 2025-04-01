@@ -24,13 +24,12 @@ This project demonstrates a scalable framework for automated software developmen
 
 - Complexity and Maintainability Trade-offs: Slight increase in complexity (16 → 19) and reduction in maintainability (166 → 144).
 
-**Hardware Efficiency**: Runs on 8GB RAM with an NVIDIA GTX 1650 (4GB VRAM).
-
 **Ollama for Model Management**: Simplifies model downloads and execution.
 
 ## Prerequisites
 
 - Python 3.10
+- Ollama
 
 ## Engine Architecture
 
@@ -202,7 +201,7 @@ After AI-generated code is produced, it undergoes a structured three-stage evalu
 
   4. If the execution completes without errors and meets predefined performance criteria, the reward increases by 10 points.
 
-  5. The original file is restored from the backup, and the backup is deleted.
+  5. The original file is restored from the backup, and the backup is removed.
 
 **Stage 3: DVC Pipeline Execution**
 
@@ -224,7 +223,7 @@ After AI-generated code is produced, it undergoes a structured three-stage evalu
 
   4. If the pipeline executes successfully, the reward increases by 10 points.
 
-  5. The original file is restored, and the backup is deleted.
+  5. The original file is restored, and the backup is removed.
 
 ### 2. Evaluation Outputs
 
