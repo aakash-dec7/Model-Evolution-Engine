@@ -1,0 +1,16 @@
+stages:
+  preprocessing:
+    cmd: python src/NMT/s1_preprocessing.py
+
+  model:
+    cmd: python src/NMT/model.py
+
+  training:
+    cmd: python src/NMT/s2_training.py
+    deps:
+      - src/NMT/s1_preprocessing.py
+
+  evaluation:
+    cmd: python src/NMT/s3_evaluation.py
+    deps:
+      - src/NMT/s2_training.py

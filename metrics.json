@@ -1,0 +1,9 @@
+{
+    "src/NMT/model.py": {
+        "Cyclomatic Complexity": "Original code: 18, AI code: 18",
+        "Maintainability Index": "Original code: 100, AI code: 97",
+        "Original code execution time": "7.117175seconds",
+        "AI code execution time": "6.018217seconds",
+        "Execution speed improvement": "15.44%"
+    }
+}

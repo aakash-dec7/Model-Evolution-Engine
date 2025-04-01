@@ -1,0 +1,18 @@
+dagshub
+faiss_cpu
+mlflow
+mlflow_skinny
+numpy
+ollama
+pandas
+radon
+scikit_learn
+sentence_transformers
+sentencepiece
+setuptools
+torch
+tqdm
+transformers
+sacremoses
+dvc
+-e .

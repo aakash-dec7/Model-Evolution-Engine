@@ -1,0 +1,145 @@
+{
+    "__init__.py": {
+        "classes": [],
+        "functions": []
+    },
+    "NMT/model.py": {
+        "classes": [
+            "Encoder",
+            "BahdanauAttention",
+            "Decoder",
+            "Seq2Seq"
+        ],
+        "functions": [
+            {
+                "name": "__init__",
+                "signature": "self, dim"
+            },
+            {
+                "name": "forward",
+                "signature": "self, queries, keys"
+            },
+            {
+                "name": "__init__",
+                "signature": "self, vocab_size, embed_dim, hidden_dim, num_layers, dropout"
+            },
+            {
+                "name": "forward",
+                "signature": "self, x"
+            },
+            {
+                "name": "__init__",
+                "signature": "self, vocab_size, embed_dim, hidden_dim, num_layers, dropout"
+            },
+            {
+                "name": "forward",
+                "signature": "self, x, hidden, cell, encoder_outputs"
+            },
+            {
+                "name": "__init__",
+                "signature": "self, vocab_size, embed_dim, hidden_dim, num_layers, dropout"
+            },
+            {
+                "name": "forward",
+                "signature": "self, input_seq, target_seq"
+            }
+        ]
+    },
+    "NMT/s1_preprocessing.py": {
+        "classes": [
+            "Preprocessing"
+        ],
+        "functions": [
+            {
+                "name": "__init__",
+                "signature": "self"
+            },
+            {
+                "name": "load_data",
+                "signature": "self, data_path"
+            },
+            {
+                "name": "tokenize_data",
+                "signature": "self, data"
+            },
+            {
+                "name": "train_test_split",
+                "signature": "self, input_seq, target_seq"
+            },
+            {
+                "name": "save_data",
+                "signature": "self, dir, input_data, target_data"
+            },
+            {
+                "name": "save_tokenizer",
+                "signature": "self"
+            },
+            {
+                "name": "run",
+                "signature": "self"
+            }
+        ]
+    },
+    "NMT/s2_training.py": {
+        "classes": [
+            "Training"
+        ],
+        "functions": [
+            {
+                "name": "__init__",
+                "signature": "self"
+            },
+            {
+                "name": "train",
+                "signature": "self"
+            },
+            {
+                "name": "save_model",
+                "signature": "self"
+            },
+            {
+                "name": "run",
+                "signature": "self"
+            }
+        ]
+    },
+    "NMT/s3_evaluation.py": {
+        "classes": [
+            "Evaluation"
+        ],
+        "functions": [
+            {
+                "name": "__init__",
+                "signature": "self"
+            },
+            {
+                "name": "init_mlflow",
+                "signature": "self"
+            },
+            {
+                "name": "get_git_commit_hash",
+                "signature": "self"
+            },
+            {
+                "name": "compute_bleu",
+                "signature": "self, reference, candidate, max_n"
+            },
+            {
+                "name": "evaluate_model",
+                "signature": "self"
+            },
+            {
+                "name": "log_results",
+                "signature": "self, avg_bleu_score"
+            },
+            {
+                "name": "run",
+                "signature": "self"
+            }
+        ]
+    },
+    "NMT/__init__.py": {
+        "classes": [],
+        "functions": []
+    }
+}
